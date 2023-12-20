@@ -6,6 +6,9 @@ interface Menu {
   }
 }
 const menu: Menu = {
+  sample: {
+    label: "Sample"
+  },
   tool: {
     label: "Tool",
     href: "#tool"
@@ -13,12 +16,9 @@ const menu: Menu = {
   timeline: {
     label: "Timeline"
   },
-  exploring: {
-    label: "Exploring"
-  },
-  followMe: {
-    label:"Follow"
-  },
+  // followMe: {
+  //   label:"Follow"
+  // },
   resume: {
     label: "Resume",
     themeName: "download"

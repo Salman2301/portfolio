@@ -1,5 +1,9 @@
+<script lang="ts">
+  import Heading from "../text/Heading.svelte";
+</script>
+
 <div class="section-resume">
-  <div class="heading">Save or Share my resume</div>
+  <Heading content="Save or Share my Resume"/>
   <div class="btn btn-download">Download</div>
   <div class="share-content">
     <div class="title">Click here to share my resume</div>
@@ -37,12 +41,13 @@
   }
   .btn-download {
     @apply bg-highlight-1;
-    @apply text-black;
+    @apply text-white;
     @apply border-highlight-1;
   }
 
   .btn-download:hover {
     @apply bg-highlight;
+    @apply text-white;
     @apply border-highlight;
   }
   .share-content {
@@ -58,5 +63,10 @@
     height: 25px;
     @apply border-none;
     @apply underline;
+  }
+  .btn-share:hover {
+    @apply bg-transparent;
+    @apply border border-secondary;
+    @apply text-highlight;
   }
 </style>

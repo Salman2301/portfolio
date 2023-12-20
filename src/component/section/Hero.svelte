@@ -1,31 +1,50 @@
 <script lang="ts">
-  import menu from "$lib/constant/menu";
   import sample from "$lib/constant/sample";
   import { data as social } from "$lib/constant/Social.svelte";
+  import Heading from "../text/Heading.svelte";
+  import { dragscroll } from "$lib/action/dragscroll";
+
+
+  // let isDragging = false;
+  // let startX;
+  // let scrollContainer;
+  // function handleDragStart(e) {
+  //   isDragging = true;
+  //   console.log({ scrollContainer })
+  //   startX = e.pageX || e.touches[0].pageX - scrollContainer.offsetLeft;
+  // }
+
+  // function handleDragEnd() {
+  //   isDragging = false;
+  // }
+
+  // function handleDragMove(e) {
+  //   if (!isDragging) return;
+  //   const x = e.pageX || e.touches[0].pageX - scrollContainer.offsetLeft;
+  //   const scrollLeft = x - startX;
+  //   scrollContainer.scrollLeft -= scrollLeft;
+  //   console.log({ scrollContainer })
+  //   console.log({ scrollLeft, c: scrollContainer.scrollLeft })
+  //   startX = x;
+  // }
+
 </script>
-
 <div class="section-hero">
-  <div class="header">
-    {#each Object.entries(menu) as [key, { label, themeName }]}
-      <div class="menu-item {themeName ? `theme-${themeName}` : ''}">
-        {label}
-      </div>
-    {/each}
-  </div>
-
   <div class="hero-body">
     <div class="content">
-      <div class="heading">I'm Salman</div>
+      <div class="heading">I'm <span class="border-b border-highlight-1">Salman</span></div>
       <div class="tag"><span>Full-Stack</span> web developer</div>
       <div class="content-bottom">
         <div class="social">
-          {#each Object.entries(social) as [key, { icon, name }]}
+          {#each Object.entries(social) as [key, { icon, name, link }]}
             <div class="icon">
-              <svelte:component this={icon} />
+              <a href="{link}">
+                <svelte:component this={icon} />
+              </a>
             </div>
           {/each}
         </div>
-        <p class="hover:underline font-bold mt-2">
+        <p class="hover:underline font-bold mt-4">
           <a href="mailto:admin@salman2301.com">admin@salman2301.com</a>
         </p>
       </div>
@@ -33,12 +52,15 @@
     <div class="divider"></div>
     <div class="sample">
       <!-- Work Sample card -->
-      <div class="sample-header">
-        Sample Work's
+      <div class="mt-20">
+        <Heading content="Sample Works" />
       </div>
-      <div class="cards">
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <div
+        class="cards"
+        use:dragscroll
+      >
         {#each Object.entries(sample) as [key, { heading, gif, link, description }]}
-          <a href={link} class="button">
             <div class="card">
               <div class="front">
                 <div class="image"></div>
@@ -54,12 +76,15 @@
               </div>
               <div class="back">
                 <div class="content">
+                  <div class="heading text-center text-lg font-bold underline mb-2">{heading}</div>
                   {description}
-                  <div class="underline pt-4 bottom-0">Click here to know more</div>
+                  
+                  <a href={link} class="button">
+                    <div class="underline pt-4 bottom-0">Click here to know more</div>
+                  </a>
                 </div>
               </div>
-            </div></a
-          >
+            </div>
         {/each}
       </div>
     </div>
@@ -74,28 +99,6 @@
     @apply text-secondary;
   }
 
-  .header {
-    @apply flex justify-center items-center;
-    @apply gap-5;
-    @apply bg-secondary-1;
-    height: 50px;
-  }
-  .menu-item {
-    @apply hover:text-highlight;
-    @apply cursor-pointer;
-    @apply bg-secondary-1;
-  }
-  .theme-download {
-    @apply bg-highlight-1;
-    @apply text-white;
-    @apply py-1;
-    @apply px-4;
-    @apply rounded-sm;
-  }
-  .theme-download:hover {
-    @apply text-white;
-    @apply bg-highlight;
-  }
 
   .hero-body {
     @apply h-full;
@@ -145,33 +148,33 @@
     @apply w-full h-full;
     @apply flex flex-col;
   }
-  .sample-header {
-    @apply bg-primary;
-    @apply text-secondary;
-    @apply mt-10;
-    @apply flex items-center justify-center;
-    @apply text-3xl;
-  }
   .cards {
     @apply flex gap-4;
     width: 64%;
-    @apply overflow-scroll;
-    scroll-snap-type: proximity;
     @apply absolute;
     @apply mt-40;
     @apply pb-4;
+    @apply overflow-scroll;
+    @apply select-none;
+    /* -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory; */
+    /* overflow: visible; */
   }
 
   .card {
-    @apply border-2 border-highlight;
+    flex: 0 0 auto;
+    @apply border border-highlight;
     height: 350px;
     max-height: 350px;
-    @apply rounded-md;
+    @apply rounded-lg;
+    scroll-snap-align: start;
+    @apply overflow-hidden;
   }
 
   .card > .front {
     display: block;
     width: 250px;
+    @apply rounded-md;
   }
 
   .card > .back {
@@ -179,7 +182,10 @@
     width: 250px;
     overflow: scroll;
     @apply p-2;
+    @apply pr-4;
     @apply text-justify;
+    @apply rounded-md;
+    height: 345px;
   }
 
   .card:hover > .front {
@@ -195,5 +201,12 @@
   .item > :global(svg) {
     color: white;
     fill: white;
+  }
+
+  .icon {
+    @apply cursor-pointer;
+  }
+  .icon:hover :global(svg) {
+    color: white;
   }
 </style>

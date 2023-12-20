@@ -1,9 +1,9 @@
 <div class="section-footer">
   <div class="section-divider"></div>
   <div class="content">
-    <!-- TODO: ADD TAILWIND CSS GROUP -->
     <a href="https://github.com/salman2301/portfolio">
-      This page made using Svelte, Git, TailwindCSS and more<span class="hover:underline px-2 font-mono">{"<> "}Source code{" </>"}</span>
+      This page made using Svelte, Git, TailwindCSS and more
+      <span class="source">{"<>"}source_code{"</>"}</span>
     </a>
     <div class="btn btn-top">
       Go back to top
@@ -36,6 +36,13 @@
     @apply cursor-pointer;
   }
   .btn-top:hover {
+    @apply underline;
+  }
+  .source {
+    @apply px-2 font-mono;
+  }
+
+  a:hover span {
     @apply underline;
   }
 </style>

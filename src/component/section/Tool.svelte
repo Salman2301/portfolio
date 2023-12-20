@@ -1,16 +1,40 @@
 <script lang="ts">
   import data from "$lib/constant/tool";
+  import Heading from "../text/Heading.svelte";
+  import type { ToolType } from "$lib/constant/tool";
 
+  let toolType: Record<ToolType, { heading: string}> = {
+    design: { heading: "Design" },
+    backend: { heading: "Backend" },
+    platform: { heading: "Platform" },
+    tool: { heading: "Tool" }
+  }
 
-  let sortedData = data.sort((a,b)=>a.rank-b.rank);
-
-  console.log({sortedData})
+  const sortedType: ToolType[] = ["tool", "design", "backend", "platform"]
 </script>
 
 <div class="section-tool">
-  <div class="icons">
-    {#each sortedData as data}
-      <div class="icon">{data.name}</div>
+  <Heading content="Tools I have used and enjoy working with."/>
+  <div class="cards">
+    {#each sortedType as key}
+      {@const {heading} = toolType[key]}
+      <div class="card">
+        <div class="heading">{heading}</div>
+        <div class="tags">
+          {#each data[key as ToolType] as tag}
+            <div class="tag">
+              <div
+                class="icon-tag-tool"
+                class:highlight={tag.highlight}
+              ></div>
+              <div
+                class="label"
+                class:highlight={tag.highlight}
+              >{tag.name}</div>
+            </div>
+          {/each}
+        </div>
+      </div>
     {/each}
   </div>
 </div>
@@ -19,14 +43,47 @@
   .section-tool {
     @apply py-40 px-20;
     @apply bg-primary;
-    height: 400px;
   }
-  .icons {
-    @apply flex flex-wrap gap-4 justify-center items-center;
+
+  .cards {
+    @apply grid grid-cols-4;
     @apply bg-primary;
   }
-  .icon {
-    @apply border border-white rounded-sm;
-    @apply p-1;
+  .card {
+    @apply border border-highlight;
+    height: 100%;
+    min-height: 100%;;
+    width: 250px;
+    @apply rounded-sm;
+    @apply p-2;
+  }
+  .heading {
+    @apply text-center;
+    @apply text-lg font-bold;
+    @apply mb-4 mt-2;
+  }
+  .tags {
+    @apply flex flex-wrap items-start gap-2 flex-col;
+    @apply justify-start;
+    padding-left: 40px;
+  }
+  .tag {
+    @apply flex gap-2 items-center;
+    @apply cursor-text;
+  }
+  .tag:hover > .label{
+    @apply text-white;
+  }
+  .tag:hover > .icon-tag-tool:not(.highlight) {
+    @apply bg-white;
+  }
+  .icon-tag-tool {
+    @apply rounded-full;
+    @apply bg-secondary;
+    width: 12px;
+    height: 12px;
+  }
+  .icon-tag-tool.highlight {
+    @apply bg-highlight-1;
   }
 </style>
