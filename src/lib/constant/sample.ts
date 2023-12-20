@@ -1,6 +1,13 @@
+export interface SampleData {
+  heading: string;
+  gif: string;
+  link: string;
+  description: string;
+} 
+
 // Sample of my previous works
 // asset location -> ./assets/gif/sample/
-const data = {
+const data: Record<string, SampleData> = {
   graph: {
     heading: "Created custom SVG Chart",
     gif: "svg-chart",
