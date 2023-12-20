@@ -9,24 +9,27 @@
     <div class="line">
     </div>
     {#each data as { timeline, exp, title, company, tag }}
-      <div class="item">
-        <div class="item-line left"></div>
-        <div class="item-content">  
-          <div class="title-exp">
-            <span class="title">{title}</span>
-            <span class="exp">{exp}</span>
+      <div class="timeline-card">
+        <div class="item">
+          <div class="item-line left"></div>
+          <div class="item-content">  
+            <div class="title-exp">
+              <span class="title">{title}</span>
+              <span class="exp">{exp}</span>
+            </div>
+            <div class="timeline-company">
+              <span class="timeline">{timeline}</span>
+              <span class="company">{company}</span>
+            </div>
+            <div class="tags">
+              {#each tag as currTag}
+                <div class="tag">{currTag}</div>
+              {/each}
+            </div>
           </div>
-          <div class="timeline-company">
-            <span class="timeline">{timeline}</span>
-            <span class="company">{company}</span>
-          </div>
-          <div class="tags">
-            {#each tag as currTag}
-              <div class="tag">{currTag}</div>
-            {/each}
-          </div>
+          <div class="item-line right"></div>
         </div>
-        <div class="item-line right"></div>
+        <div class="item-connect-mobile"></div>
       </div>
     {/each}
   </div>
@@ -49,6 +52,7 @@
     @apply w-1;
     @apply absolute;
     @apply bg-transparent;
+    @apply invisible;
   }
   .item {
     @apply w-full;
@@ -60,6 +64,21 @@
     height: 2px;
     @apply bg-secondary;
   }
+  .item-connect-mobile {
+    width: 1px;
+    height: 25px;
+    @apply bg-secondary;
+    left: 50%;
+  }
+  .timeline-card {
+    @apply flex flex-col items-center;
+  }
+  .timeline-card:last-child .item-connect-mobile {
+    @apply hidden;
+  }
+  .item-line.left {
+    @apply bg-transparent;
+  }
   .item-line.right {
     @apply bg-transparent;
   }
@@ -70,27 +89,48 @@
     @apply border rounded-md;
     @apply px-2 pt-4;
   }
-  .item:nth-child(2n) {
-    padding-right: 327px;
+  
+  .item:nth-child(n) {
+    padding-right: 0px;
     padding-left: 0px;
   }
-  .item:nth-child(2n) > .item-line.right {
-    @apply bg-secondary;
-  }
-  .item:nth-child(2n) > .item-line.left {
-    @apply bg-transparent;
-  }
-  .item:nth-child(2n) > .item-content > .title-exp {
-    @apply flex-row-reverse;
-  }
-  .item:nth-child(2n) > .item-content > .timeline-company {
-    @apply flex-row;
-  }
-  .item:nth-child(2n+1) > .item-content > .timeline-company {
-    @apply flex-row-reverse;
-  }
-  .item:nth-child(2n) > .item-content > .timeline {
-    text-align: left;
+  @media screen(lg) {
+    
+    .item-connect-mobile {
+      @apply invisible;
+    }
+    .line {
+      @apply visible;
+    }
+    .item-line.left {
+      @apply bg-secondary;
+    }
+    .timeline-card:nth-child(n) {
+      padding-right: 0px;
+      padding-left: 332px;
+    }
+    .timeline-card:nth-child(2n) {
+      padding-right: 327px;
+      padding-left: 0px;
+    }
+    .timeline-card:nth-child(2n) > .item > .item-line.right {
+      @apply bg-secondary;
+    }
+    .timeline-card:nth-child(2n) > .item > .item-line.left {
+      @apply bg-transparent;
+    }
+    .timeline-card:nth-child(2n) > .item > .item-content > .title-exp {
+      @apply flex-row-reverse;
+    }
+    .timeline-card:nth-child(2n) > .item > .item-content > .timeline-company {
+      @apply flex-row;
+    }
+    .timeline-card:nth-child(2n+1) > .item > .item-content > .timeline-company {
+      @apply flex-row-reverse;
+    }
+    .timeline-card:nth-child(2n) > .item > .item-content > .timeline {
+      text-align: left;
+    }
   }
   .title-exp {
     @apply flex justify-between;
