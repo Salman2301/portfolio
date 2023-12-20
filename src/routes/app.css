@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+div {
+  box-sizing: border-box;
+}
+
+div {
+  @apply bg-primary;
+  @apply text-secondary;
+}
+
+:root {
+  --color-primary: rgba(30,30,30);
+  --color-secondary: rgba(187,187,187);
+  --color-highlight: rgba(106, 153, 246);
+  --color-highlight-1: rgba(245, 119, 70);
+  --color-secondary-1: rgba(45, 45, 45);
+}
