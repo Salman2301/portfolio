@@ -5,9 +5,9 @@
       This page made using Svelte, Git, TailwindCSS and more
       <span class="source">{"<>"}source_code{"</>"}</span>
     </a>
-    <div class="btn btn-top">
+    <a class="btn btn-top" href="#sample">
       Go back to top
-    </div>
+    </a>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
     @apply bg-primary;
   }
   .content {
-    @apply flex justify-between items-center;
+    @apply flex flex-col md:flex-row justify-between items-center gap-4;
     @apply py-2;
   }
   .section-divider {

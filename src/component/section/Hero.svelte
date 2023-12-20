@@ -4,30 +4,6 @@
   import Heading from "../text/Heading.svelte";
   import { dragscroll } from "$lib/action/dragscroll";
 
-
-  // let isDragging = false;
-  // let startX;
-  // let scrollContainer;
-  // function handleDragStart(e) {
-  //   isDragging = true;
-  //   console.log({ scrollContainer })
-  //   startX = e.pageX || e.touches[0].pageX - scrollContainer.offsetLeft;
-  // }
-
-  // function handleDragEnd() {
-  //   isDragging = false;
-  // }
-
-  // function handleDragMove(e) {
-  //   if (!isDragging) return;
-  //   const x = e.pageX || e.touches[0].pageX - scrollContainer.offsetLeft;
-  //   const scrollLeft = x - startX;
-  //   scrollContainer.scrollLeft -= scrollLeft;
-  //   console.log({ scrollContainer })
-  //   console.log({ scrollLeft, c: scrollContainer.scrollLeft })
-  //   startX = x;
-  // }
-
 </script>
 <div class="section-hero">
   <div class="hero-body">
@@ -155,10 +131,6 @@
     @apply mt-40;
     @apply pb-4;
     @apply overflow-scroll;
-    @apply select-none;
-    /* -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory; */
-    /* overflow: visible; */
   }
 
   .card {

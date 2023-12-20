@@ -46,14 +46,17 @@
   }
 
   .cards {
-    @apply grid grid-cols-4;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2;
     @apply bg-primary;
+    justify-items: center;
+    align-items: center;
   }
   .card {
     @apply border border-highlight;
     height: 100%;
     min-height: 100%;;
-    width: 250px;
+    width: 240px;
+    max-width: 250px;
     @apply rounded-sm;
     @apply p-2;
   }
