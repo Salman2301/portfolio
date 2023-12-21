@@ -40,7 +40,7 @@
 
 <style lang="postcss">
   .section-tool {
-    @apply py-40 px-20;
+    @apply py-32 px-20;
     @apply bg-primary;
   }
 

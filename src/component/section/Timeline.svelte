@@ -155,7 +155,7 @@
   }
   .company {
     @apply text-xs;
-    @apply text-highlight-1;
+    @apply text-highlight;
   }
   .tags {
     @apply flex gap-2 items-center;

@@ -5,9 +5,6 @@
       This page made using Svelte, Git, TailwindCSS and more
       <span class="source">{"<>"}source_code{"</>"}</span>
     </a>
-    <a class="btn btn-top" href="#sample">
-      Go back to top
-    </a>
   </div>
 </div>
 
@@ -41,11 +38,5 @@
   }
   .source {
     @apply px-2 font-mono;
-  }
-  a {
-    @apply text-center;
-  }
-  a:hover span {
-    @apply underline;
   }
 </style>

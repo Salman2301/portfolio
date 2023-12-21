@@ -1,22 +1,5 @@
 <script lang="ts">
   import Follow from "../social/Follow.svelte";
-
-  async function handleShare() {
-    const shareInfo = {
-      title: "Salman's Portfolio",
-      text: "Salman's Portfolio!",
-      url: "https://salman2301.com",
-    };
-    try {
-      // if(!navigator || !navigator.share) return;
-      await navigator.share(shareInfo);
-      console.log("shared")
-    } catch (err) {
-      console.error(err);
-      alert(`Error: Failed to share. Trying email service`);
-      location.href = "mailto:admin@salman2301.com"
-    }
-  }
 </script>
 
 <div class="section-resume">
@@ -24,15 +7,10 @@
     <h1 class="heading-title">Save or share my<span class="text-highlight-1 pl-1">Resume</span></h1>
   </div>
   <div class="btn btn-download">Download</div>
-  <div class="share-content">
-    <div class="share-label">
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <span  class="underline" role="button" tabindex="0" on:click={handleShare}>Click here</span> to share my Resume </div>
-    
+  <div class="divider-content"></div>
     <div class="follow-me">
       <Follow />
     </div>
-  </div>
 </div>
 
 <style lang="postcss">
@@ -47,8 +25,11 @@
     @apply text-center;
     font-weight: 500;
   }
-  .share-label {
-    @apply mt-4;
+  .divider-content {
+    width: 180px;
+    height: 1px;
+    @apply my-10;
+    @apply bg-secondary;
   }
   .heading {
     @apply text-5xl;
@@ -90,7 +71,7 @@
     @apply mt-2;
   }
   .follow-me {
-    @apply mt-10 mb-5;
+    @apply mb-5;
   }
 
   .btn-share {
