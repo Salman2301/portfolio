@@ -1,10 +1,9 @@
 <script lang="ts">
   import data from "$lib/constant/timeline";
-  import Heading from "../text/Heading.svelte";
 </script>
 
 <div class="section-timeline">
-  <Heading content="Timeline view" />
+  <h1 class="heading"><span class="text-highlight-1 pr-1">Timeline</span> View</h1>
   <div class="timeline-container">
     <div class="line">
     </div>
@@ -36,6 +35,12 @@
 </div>
 
 <style lang="postcss">
+  .heading {
+    @apply text-3xl;
+    @apply mb-8 mt-4;
+    @apply text-center;
+    font-weight: 500;
+  }
   .section-timeline {
     @apply bg-primary;
     @apply px-10 py-10;
@@ -66,7 +71,7 @@
   }
   .item-connect-mobile {
     width: 1px;
-    height: 25px;
+    height: 40px;
     @apply bg-secondary;
     left: 50%;
   }
@@ -83,7 +88,7 @@
     @apply bg-transparent;
   }
   .item-content {
-    width: 250px;
+    width: 320px;
     height: 100px;
     border-radius: 10px;
     @apply border rounded-md;
@@ -94,6 +99,7 @@
     padding-right: 0px;
     padding-left: 0px;
   }
+  
   @media screen(lg) {
     
     .item-connect-mobile {
@@ -107,10 +113,10 @@
     }
     .timeline-card:nth-child(n) {
       padding-right: 0px;
-      padding-left: 332px;
+      padding-left: 402px;
     }
     .timeline-card:nth-child(2n) {
-      padding-right: 327px;
+      padding-right: 399px;
       padding-left: 0px;
     }
     .timeline-card:nth-child(2n) > .item > .item-line.right {
@@ -141,7 +147,7 @@
   }
 
   .timeline-company {
-    @apply flex justify-between;
+    @apply flex justify-between flex-row-reverse;
   }
   .timeline {
     @apply text-xs;
@@ -155,7 +161,7 @@
     @apply flex gap-2 items-center;
     @apply overflow-scroll;
     scrollbar-width: none;  /* Firefox */
-    @apply mt-2;
+    @apply mt-3;
   }
   .tags::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */

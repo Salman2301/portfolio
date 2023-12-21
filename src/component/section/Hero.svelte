@@ -1,9 +1,8 @@
 <script lang="ts">
   import SampleCard from "../card/Sample.svelte";
-  import Heading from "../text/Heading.svelte";
+  import Follow from "../social/Follow.svelte";
 
   import sample from "$lib/constant/sample";
-  import { data as social } from "$lib/constant/Social.svelte";
   import { dragscroll } from "$lib/action/dragscroll";
 
 </script>
@@ -15,24 +14,13 @@
         <div class="tag"><span>Full-Stack</span> web developer</div>
       </div>
       <div class="content-bottom">
-        <div class="social">
-          {#each Object.entries(social) as [key, { icon, name, link }]}
-            <div class="icon">
-              <a href="{link}">
-                <svelte:component this={icon} />
-              </a>
-            </div>
-          {/each}
-        </div>
-        <p class="hover:underline font-bold mt-4">
-          <a href="mailto:admin@salman2301.com">admin@salman2301.com</a>
-        </p>
+        <Follow />
       </div>
     </div>
     <div class="divider"></div>
     <div class="sample">
       <div class="mt-20">
-        <Heading content="Sample Works" />
+        <h1 class="title"><span class="text-highlight-1 pr-1">Sample</span> Work</h1>
       </div>
       <div class="cards" use:dragscroll >
         {#each Object.entries(sample) as [key, card]}
@@ -48,6 +36,12 @@
     width: 100%;
     @apply bg-primary;
     @apply text-secondary;
+  }
+  .title {
+    @apply text-3xl;
+    @apply mb-8 mt-4;
+    @apply text-center;
+    font-weight: 500;
   }
 
   .hero-body {
@@ -87,10 +81,6 @@
     @apply text-highlight;
   }
 
-  .social {
-    @apply flex gap-5 justify-center;
-    @apply mt-2;
-  }
   .divider {
     width: 2px;
     height: 105%;
@@ -121,10 +111,4 @@
     fill: white;
   }
 
-  .icon {
-    @apply cursor-pointer;
-  }
-  .icon:hover :global(svg) {
-    color: white;
-  }
 </style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Heading from "../text/Heading.svelte";
+  import Follow from "../social/Follow.svelte";
 
   async function handleShare() {
     const shareInfo = {
@@ -21,12 +21,17 @@
 
 <div class="section-resume">
   <div class="mb-10">
-    <Heading content="Save or Share my Resume"/>
+    <h1 class="heading-title">Save or share my<span class="text-highlight-1 pl-1">Resume</span></h1>
   </div>
   <div class="btn btn-download">Download</div>
   <div class="share-content">
-    <div class="title">Click here to share my resume</div>
-    <div class="btn btn-share" on:click={handleShare}>Share</div>
+    <div class="share-label">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <span  class="underline" role="button" tabindex="0" on:click={handleShare}>Click here</span> to share my Resume </div>
+    
+    <div class="follow-me">
+      <Follow />
+    </div>
   </div>
 </div>
 
@@ -35,6 +40,15 @@
     height: 400px;
     @apply bg-primary;
     @apply flex flex-col items-center justify-center;
+  }
+  .heading-title {
+    @apply text-3xl;
+    @apply mb-8 mt-4;
+    @apply text-center;
+    font-weight: 500;
+  }
+  .share-label {
+    @apply mt-4;
   }
   .heading {
     @apply text-5xl;
@@ -74,6 +88,9 @@
     @apply flex items-center flex-col;
     @apply gap-2;
     @apply mt-2;
+  }
+  .follow-me {
+    @apply mt-10 mb-5;
   }
 
   .btn-share {

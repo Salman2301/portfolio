@@ -27,8 +27,16 @@
     @apply gap-5;
     @apply bg-secondary-1;
     height: 50px;
-    top: 0;
+    bottom: -1px;
   }
+
+  @media screen(md) {
+    .header {
+      bottom: unset;
+      top:0;
+    }
+  }
+
   .menu-item {
     @apply hover:text-highlight;
     @apply cursor-pointer;
@@ -49,5 +57,6 @@
   }
   .top-blank-space {
     height: 40px;
+    @apply h-10 lg:h-0;
   }
 </style>

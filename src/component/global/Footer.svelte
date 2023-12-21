@@ -16,6 +16,7 @@
     width: 100%;
     @apply px-10;
     @apply bg-primary;
+    @apply pb-12 md:pb-0
   }
   .content {
     @apply flex flex-col md:flex-row justify-between items-center gap-4;
@@ -41,7 +42,9 @@
   .source {
     @apply px-2 font-mono;
   }
-
+  a {
+    @apply text-center;
+  }
   a:hover span {
     @apply underline;
   }

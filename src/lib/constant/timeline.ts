@@ -4,21 +4,21 @@ const data = [
     title: "Founding engineer",
     company: "Oktria",
     exp: "3 year",
-    tag: ["Svelte", "Strapi", "PSQL", "Python"]
+    tag: ["Svelte", "Strapi", "PSQL", "Python", "GCP"]
   },
   {
     timeline: "2019-2020",
     title: "Founding developer",
     company: "MyPharm",
     exp: "1 year",
-    tag: ["Svelte", "Strapi", "PSQL", "ML"]
+    tag: ["Svelte", "Strapi", "PSQL", "AWS", "Ubuntu"]
   },
   {
     timeline: "2018-now",
     title: "Freelancer",
     company: "Salman2301",
     exp: "+5 year",
-    tag: ["Wix", "NodeJS", "jsdoc", "3rd Party api"]
+    tag: ["Wix", "NodeJS", "Jsdoc", "3rd-party API"]
   },
   {
     timeline: "2014-2018",

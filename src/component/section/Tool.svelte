@@ -1,6 +1,5 @@
 <script lang="ts">
   import data from "$lib/constant/tool";
-  import Heading from "../text/Heading.svelte";
   import type { ToolType } from "$lib/constant/tool";
 
   let toolType: Record<ToolType, { heading: string}> = {
@@ -14,7 +13,7 @@
 </script>
 
 <div class="section-tool">
-  <Heading content="Tools I have used and enjoy working with."/>
+  <h1 class="title"><span class="text-highlight-1 pr-1">Tools</span> I have used and enjoy working with.</h1>
   <div class="cards">
     {#each sortedType as key}
       {@const {heading} = toolType[key]}
@@ -59,6 +58,12 @@
     max-width: 250px;
     @apply rounded-md;
     @apply p-2;
+  }
+  .title {
+    @apply text-3xl;
+    @apply mb-8 mt-4;
+    @apply text-center;
+    font-weight: 500;
   }
   .heading {
     @apply text-center;
