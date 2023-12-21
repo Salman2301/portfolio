@@ -1,4 +1,4 @@
-// https://github.com/vnphanquang/svelte-put/blob/main/packages/actions/dragscroll/src/public.d.ts// import 
+// https://github.com/vnphanquang/svelte-put/tree/main/packages/actions/dragscroll 
 import type { Action } from "@sveltejs/kit";
 import type { ActionReturn } from "svelte/action";
 

@@ -106,7 +106,7 @@
     @apply flex gap-4;
     @apply w-full;
     /* @apply mt-40; */
-    @apply pb-4;
+    @apply pb-4 px-4;
     @apply overflow-scroll;
   }
 

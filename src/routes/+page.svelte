@@ -20,8 +20,6 @@
       }
     }
   }
-
-  $:console.log(activeAnchor)
 </script>
 
 <Header {activeAnchor}/>

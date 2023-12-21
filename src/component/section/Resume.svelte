@@ -1,19 +1,38 @@
 <script lang="ts">
   import Heading from "../text/Heading.svelte";
+
+  async function handleShare() {
+    const shareInfo = {
+      title: "Salman's Portfolio",
+      text: "Salman's Portfolio!",
+      url: "https://salman2301.com",
+    };
+    try {
+      // if(!navigator || !navigator.share) return;
+      await navigator.share(shareInfo);
+      console.log("shared")
+    } catch (err) {
+      console.error(err);
+      alert(`Error: Failed to share. Trying email service`);
+      location.href = "mailto:admin@salman2301.com"
+    }
+  }
 </script>
 
 <div class="section-resume">
-  <Heading content="Save or Share my Resume"/>
+  <div class="mb-10">
+    <Heading content="Save or Share my Resume"/>
+  </div>
   <div class="btn btn-download">Download</div>
   <div class="share-content">
     <div class="title">Click here to share my resume</div>
-    <div class="btn btn-share">Share</div>
+    <div class="btn btn-share" on:click={handleShare}>Share</div>
   </div>
 </div>
 
 <style lang="postcss">
   .section-resume {
-    height: 500px;
+    height: 400px;
     @apply bg-primary;
     @apply flex flex-col items-center justify-center;
   }
@@ -43,6 +62,7 @@
     @apply bg-highlight-1;
     @apply text-white;
     @apply border-highlight-1;
+    @apply rounded-md;
   }
 
   .btn-download:hover {

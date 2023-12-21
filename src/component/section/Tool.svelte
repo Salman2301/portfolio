@@ -57,7 +57,7 @@
     min-height: 100%;;
     width: 240px;
     max-width: 250px;
-    @apply rounded-sm;
+    @apply rounded-md;
     @apply p-2;
   }
   .heading {
