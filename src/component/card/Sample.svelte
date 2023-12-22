@@ -8,8 +8,8 @@
   <div class="front">
     <div class="image"></div>
     <div class="gif">
+      <!-- src="./assets/gif/sample/{card.gif}.gif" -->
       <img
-        src="./assets/gif/sample/{card.gif}.gif"
         alt="project {card.heading}"
         width="250"
         height="300"

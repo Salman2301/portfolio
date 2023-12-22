@@ -11,7 +11,7 @@ const data: Record<string, SampleData> = {
   graph: {
     heading: "Created custom SVG Chart",
     gif: "svg-chart",
-    link: "live url link",
+    link: "#",
     description: "Created a custom SVG based chart for my client use case. Use just plain html and javascript instead of using a bloated chart library. Just wanted a nice line chart and easy to use without worrying about tons of chart configurations and Since we use SVG. We can easily debug instead of using Canvas"
   },
   "chess-npm": {
