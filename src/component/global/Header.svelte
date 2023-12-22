@@ -1,5 +1,6 @@
 <script lang="ts">
   import menu from "$lib/constant/menu";
+  import DownloadIcon from "$lib/svg/Download.svelte";
   export let activeAnchor:string;
 </script>
 
@@ -14,12 +15,15 @@
       </div>
     </a>
   {/each}
+    <a href="/asset/pdf/Resume.pdf" download="Salman_Resume" class="icon">
+      <DownloadIcon />
+    </a>
 </div>
 <div class="top-blank-space"></div>
 
 <style lang="postcss">
 
-.header {
+  .header {
     @apply fixed;
     z-index: 999;
     @apply w-full;
@@ -54,6 +58,13 @@
   .theme-download:hover {
     @apply text-white;
     @apply bg-highlight;
+  }
+  
+  .theme-download.highlight {
+    @apply underline
+  }
+  .icon {
+    margin-left: -10px;
   }
   .top-blank-space {
     height: 40px;

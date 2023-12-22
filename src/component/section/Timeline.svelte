@@ -3,11 +3,11 @@
 </script>
 
 <div class="section-timeline">
-  <h1 class="heading"><span class="text-highlight-1 pr-1">Timeline</span> View</h1>
+  <h1 class="heading">My <span class="text-highlight-1 pr-1">Timeline</span> till now</h1>
   <div class="timeline-container">
     <div class="line">
     </div>
-    {#each data as { timeline, exp, title, company, tag }}
+    {#each data as { timeline, exp, title, company, companyLink, tag }}
       <div class="timeline-card">
         <div class="item">
           <div class="item-line left"></div>
@@ -18,7 +18,12 @@
             </div>
             <div class="timeline-company">
               <span class="timeline">{timeline}</span>
-              <span class="company">{company}</span>
+              {#if companyLink}
+                <a href="{companyLink}" target="_blank" ><span class="company underline">{company}</span></a>
+              {:else}
+                <span class="company">{company}</span>
+              {/if}
+              
             </div>
             <div class="tags">
               {#each tag as currTag}
@@ -89,7 +94,7 @@
   }
   .item-content {
     width: 320px;
-    height: 100px;
+    /* height: 100px; */
     border-radius: 10px;
     @apply border rounded-md;
     @apply px-2 pt-4;
@@ -157,11 +162,14 @@
     @apply text-xs;
     @apply text-highlight;
   }
+  a .company {
+    @apply hover:text-highlight-1;
+  }
   .tags {
     @apply flex gap-2 items-center;
     @apply overflow-scroll;
     scrollbar-width: none;  /* Firefox */
-    @apply mt-3;
+    @apply my-3;
   }
   .tags::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */

@@ -27,6 +27,9 @@
     @apply cursor-pointer;
   }
   .icon:hover :global(svg) {
-    color: white;
+    /* color: red; */
+    /* @apply text-primary; */
+    color: var(--color-highlight-1);
+
   }
 </style>

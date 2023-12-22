@@ -40,12 +40,12 @@
 
 <style lang="postcss">
   .section-tool {
-    @apply py-32 px-20;
+    @apply py-40 px-20;
     @apply bg-primary;
   }
 
   .cards {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4;
     @apply bg-primary;
     justify-items: center;
     align-items: center;

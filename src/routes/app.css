@@ -19,9 +19,9 @@ div {
 }
 
 :root {
-  --color-primary: rgba(30,30,30);
-  --color-secondary: rgba(187,187,187);
+  --color-primary: rgba(30,30,30); /* #1e1e1e */
+  --color-secondary: rgba(187,187,187); /* #bbbbbb */
   --color-highlight: rgba(106, 153, 246);
-  --color-highlight-1: rgba(245, 119, 70);
+  --color-highlight-1: rgba(245, 119, 70); /* #F57846 */
   --color-secondary-1: rgba(45, 45, 45);
 }

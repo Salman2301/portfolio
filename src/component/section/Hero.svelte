@@ -83,10 +83,12 @@
 
   .divider {
     width: 2px;
-    height: 105%;
+    height: 550px;
     @apply mx-4;
     background-color: rgba(55,55,55);
+    @apply hidden lg:block;
   }
+
   .sample {
     @apply h-full;
     @apply flex flex-col;
@@ -98,12 +100,6 @@
     /* @apply mt-40; */
     @apply pb-4 px-4;
     @apply overflow-scroll;
-  }
-
-  @media screen(md) {
-    .cards {
-      /* width: 64%; */
-    }
   }
 
   .item > :global(svg) {

@@ -4,9 +4,11 @@
 
 <div class="section-resume">
   <div class="mb-10">
-    <h1 class="heading-title">Save or share my<span class="text-highlight-1 pl-1">Resume</span></h1>
+    <h1 class="heading-title">Download my<span class="text-highlight-1 pl-1">Resume</span> below</h1>
   </div>
-  <div class="btn btn-download">Download</div>
+  <a href="/asset/pdf/Resume.pdf" download="Salman_Resume.pdf">
+    <div class="btn btn-download">Download</div>
+  </a>
   <div class="divider-content"></div>
     <div class="follow-me">
       <Follow />
@@ -15,9 +17,10 @@
 
 <style lang="postcss">
   .section-resume {
-    height: 400px;
+    /* height: 400px; */
     @apply bg-primary;
     @apply flex flex-col items-center justify-center;
+    @apply py-40;
   }
   .heading-title {
     @apply text-3xl;

@@ -41,12 +41,18 @@ const data: Record<ToolType, ToolData[]> = {
       icon: "docker",
       type: "tool",
     },
+    {
+      name: "Let's encrypt",
+      rank: 7,
+      icon: "encrypt",
+      type: "tool"
+    }
   ],
   backend: [
     {
       name: "Nodejs",
       rank: 6,
-      icon: "ubuntu",
+      icon: "nodejs",
       type: "backend",
       highlight: true,
     },
@@ -79,12 +85,6 @@ const data: Record<ToolType, ToolData[]> = {
       name: "Kubernetes",
       rank: 4,
       icon: "kube",
-      type: "backend",
-    },
-    {
-      name: "Ubuntu",
-      rank: 6,
-      icon: "ubuntu",
       type: "backend",
     },
   ],
@@ -134,12 +134,7 @@ const data: Record<ToolType, ToolData[]> = {
       rank: 10,
       icon: "vscode",
       type: "platform",
-    },
-    {
-      name: "Github",
-      rank: 9,
-      icon: "github",
-      type: "platform",
+      highlight: true,
     },
     {
       name: "GCP",
@@ -149,9 +144,21 @@ const data: Record<ToolType, ToolData[]> = {
       highlight: true,
     },
     {
+      name: "Github",
+      rank: 9,
+      icon: "github",
+      type: "platform",
+    },
+    {
       name: "AWS",
       rank: 5,
       icon: "aws",
+      type: "platform",
+    },
+    {
+      name: "Rest API",
+      rank: 5,
+      icon: "rest_api",
       type: "platform",
     },
     {
