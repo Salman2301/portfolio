@@ -5,28 +5,14 @@
 </script>
 
 <div class="card">
-  <div class="front">
-    <div class="image"></div>
-    <div class="gif">
-      <!-- src="./assets/gif/sample/{card.gif}.gif" -->
-      <img
-        alt="project {card.heading}"
-        width="250"
-        height="300"
-      />
-      <div class="heading text-center">{card.heading}</div>
-    </div>
+  <h2 class="heading text-center">{card.heading}</h2>
+  <div class="description">
+    {card.description}
   </div>
-  <div class="back">
-    <div class="content">
-      <div class="heading text-center text-lg font-bold underline mb-2">{card.heading}</div>
-      {card.description}
-      
-      <a href={card.link} class="button">
-        <div class="underline pt-4 bottom-0">Click here to know more</div>
-      </a>
-    </div>
-  </div>
+  
+  <a href={card.link} class="button" target="_blank">
+    View more
+  </a>
 </div>
 
 <style>
@@ -36,18 +22,38 @@
     height: 350px;
     max-height: 350px;
     scroll-snap-align: start;
-    @apply border border-highlight;
+    @apply border border-secondary-1;
     @apply rounded-lg;
     @apply overflow-hidden;
     @apply select-none;
   }
 
-  .card > .front {
-    display: block;
+  .card {
     width: 250px;
+    @apply p-2;
     @apply rounded-md;
+    @apply flex flex-col;
+  }
+  h2 {
+    @apply text-xl;
+    /* @apply underline; */
+    @apply mb-2;
+    @apply font-bold;
+    @apply text-white;
+  }
+  .description {
+    height: 300px;
   }
 
+  .button {
+    @apply bg-highlight text-white;
+    @apply rounded-md;
+    @apply text-center text-sm;
+    width: 100px;
+    @apply mx-auto my-2 py-1;
+
+  }
+/* 
   .card > .back {
     display: none;
     width: 250px;
@@ -67,5 +73,5 @@
   }
   .card:hover > .back > .content {
     @apply cursor-pointer;
-  }
+  } */
 </style>

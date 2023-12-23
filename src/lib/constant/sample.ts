@@ -8,35 +8,35 @@ export interface SampleData {
 // Sample of my previous works
 // asset location -> ./assets/gif/sample/
 const data: Record<string, SampleData> = {
-  graph: {
-    heading: "Created custom SVG Chart",
+  npm: {
+    heading: "Chess notation parser",
     gif: "svg-chart",
-    link: "#",
-    description: "Created a custom SVG based chart for my client use case. Use just plain html and javascript instead of using a bloated chart library. Just wanted a nice line chart and easy to use without worrying about tons of chart configurations and Since we use SVG. We can easily debug instead of using Canvas"
+    link: "https://github.com/Salman2301/chess-notation-parser",
+    description: "Publish npm package online for chess notation parser. This package takes chess notation like bxc8 and convert it to a standardized JSON format. Full tested using Jest and deployed to npm."
   },
-  "chess-npm": {
-    heading: "Chess notation - npm library",
+  "pgn-nlt": {
+    heading: "Create training dataset",
     gif: "npm-lib",
-    link: "https://npm.com/salman2301/chess-notation-parser",
-    description: "I needed a light-weight parser for my use case with a full blown chess engine. So, created my own parser with unit test and open sourced it for everyone."
+    link: "https://github.com/Salman2301/pgn-nlt",
+    description: "Generate 100_000's of audio training dataset using Jupyter Nodebook python script using Google Audio generating service. The code is open source. Written using python 3.x."
   },
-  "chess-npm-3": {
-    heading: "Chess notation - npm library",
+  "code-snippets-template": {
+    heading: "Code snippets template",
     gif: "npm-lib",
-    link: "https://npm.com/salman2301/chess-notation-parser",
-    description: "I needed a light-weight parser for my use case with a full blown chess engine. So, created my own parser with unit test and open sourced it for everyone."
+    link: "https://github.com/Salman2301/code-snippet-template",
+    description: "A simple boiler plate repo to stores all the code snippets and display it as an iframe. Take adavantage of free Github hosting and useful to Blog. Under the hood it uses highlight.js and Use github action to build and deploy the github page [gh-page]."
   },
-  "chess-npm-2": {
-    heading: "Chess notation - npm library",
+  "wix-alert-component": {
+    heading: "Wix Alert Component",
     gif: "npm-lib",
-    link: "https://npm.com/salman2301/chess-notation-parser",
-    description: "I needed a light-weight parser for my use case with a full blown chess engine. So, created my own parser with unit test and open sourced it for everyone."
+    link: "https://github.com/Salman2301/wix-alert-component",
+    description: "A simple Wix Toast component made using custom element for Wix website. Under the hood using Svelte.js and Rollup to convert a SPA into a custom element. This will help to create toast message that can be displayed on corner of the screen"
   },
-  "chess-npm-4": {
-    heading: "Chess notation - npm library",
+  "sticky-hover": {
+    heading: "Sticky hover",
     gif: "npm-lib",
-    link: "https://npm.com/salman2301/chess-notation-parser",
-    description: "I needed a light-weight parser for my use case with a full blown chess engine. So, created my own parser with unit test and open sourced it for everyone."
+    link: "https://svelte.dev/repl/6ebe2ea7974b4ce6a7bc7816e04a9e0e?version=4.2.8",
+    description: "A svelte replication based on Apple hover effect design easy to create a hover effect shadow on mouse move. Click on the link to test the smooth animation."
   }
 } 
 

@@ -10,7 +10,7 @@
 ✔ Push to github action @done(23-12-23 04:34)
 ✔ Setup github action and build the static page @done(23-12-23 04:35)
 ☐ Update sample data with proper image and data
-  ☐ Npm library - chess notation parser
+  ☐ Npm library - Chess notation parser
     https://github.com/Salman2301/chess-notation-parser
     This package takes a chess algebraic notation and return a standard parsed JSON format. It's a Portable Game Notation (PGN) is a standard plain text format for recording chess games (both the moves and related data), which can be read by humans and is also supported by most chess software. Note this just convert the Algebraic notation (bxc8 Kb4) a crucial part of PGN.
 
