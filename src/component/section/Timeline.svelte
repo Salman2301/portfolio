@@ -1,5 +1,6 @@
 <script lang="ts">
   import data from "$lib/constant/timeline";
+  import Tags from "../tag/Tags.svelte";
 </script>
 
 <div class="section-timeline">
@@ -7,7 +8,7 @@
   <div class="timeline-container">
     <div class="line">
     </div>
-    {#each data as { timeline, exp, title, company, companyLink, tag }}
+    {#each data as { timeline, exp, title, company, companyLink, tags }}
       <div class="timeline-card">
         <div class="item">
           <div class="item-line left"></div>
@@ -23,13 +24,8 @@
               {:else}
                 <span class="company">{company}</span>
               {/if}
-              
             </div>
-            <div class="tags">
-              {#each tag as currTag}
-                <div class="tag">{currTag}</div>
-              {/each}
-            </div>
+              <Tags {tags} />
           </div>
           <div class="item-line right"></div>
         </div>
@@ -164,22 +160,5 @@
   }
   a .company {
     @apply hover:text-highlight-1;
-  }
-  .tags {
-    @apply flex gap-2 items-center;
-    @apply overflow-scroll;
-    scrollbar-width: none;  /* Firefox */
-    @apply my-3;
-  }
-  .tags::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-  }
-  .tag {
-    @apply bg-secondary;
-    @apply rounded-md;
-    @apply text-primary;
-    @apply px-2;
-    @apply text-xs;
-    @apply whitespace-pre;
   }
 </style>

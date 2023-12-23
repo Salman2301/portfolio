@@ -5,14 +5,14 @@ const data = [
     company: "Oktria",
     companyLink: "https://oktria.com",
     exp: "3 year",
-    tag: ["Svelte", "Strapi", "PSQL", "Python", "GCP"]
+    tags: ["Svelte", "Strapi", "PSQL", "Python", "GCP"]
   },
   {
     timeline: "2019-2020",
     title: "Lead Developer",
     company: "MyPharm",
     exp: "1 year",
-    tag: ["Svelte", "Strapi", "PSQL", "AWS", "Nginx"]
+    tags: ["Svelte", "Strapi", "PSQL", "AWS", "Nginx"]
   },
   {
     timeline: "2019-2020",
@@ -20,7 +20,7 @@ const data = [
     company: "Fiverr",
     companyLink: "https://fiverr.com/salman2301",
     exp: "1 year",
-    tag: ["★ 4.9/5 (31)", "Javascript", "NodeJS", "Stripe", "E-Commerce"]
+    tags: ["★ 4.9/5 (31)", "Javascript", "NodeJS", "Stripe", "E-Commerce"]
   },
   {
     timeline: "2018-now",
@@ -28,14 +28,14 @@ const data = [
     company: "Salman2301",
     companyLink: "https://salman2301.com",
     exp: "+5 year",
-    tag: ["Wix", "NodeJS", "JsDoc", "3rd-party API"]
+    tags: ["Wix", "NodeJS", "JsDoc", "3rd-party API"]
   },
   {
     timeline: "2014-2018",
     company: "TJS College",
     title: "Mechanical Engineer",
     exp: "4 year",
-    tag: ["GCPA - 7.68", "Matrix", "Problem solving" ]
+    tags: ["GCPA - 7.68", "Matrix", "Problem solving" ]
   },
 ]; 
 

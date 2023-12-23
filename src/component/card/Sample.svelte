@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { SampleData } from "$lib/constant/sample";
+  import Tags from "../tag/Tags.svelte";
 
   export let card: SampleData;
 </script>
@@ -9,7 +10,7 @@
   <div class="description">
     {card.description}
   </div>
-  
+  <Tags tags={card.tags}/>
   <a href={card.link} class="button" target="_blank">
     View more
   </a>
@@ -22,36 +23,40 @@
     height: 350px;
     max-height: 350px;
     scroll-snap-align: start;
-    @apply border border-secondary-1;
+    @apply border border-highlight;
     @apply rounded-lg;
     @apply overflow-hidden;
     @apply select-none;
   }
 
   .card {
-    width: 250px;
+    width: 240px;
     @apply p-2;
     @apply rounded-md;
     @apply flex flex-col;
   }
   h2 {
-    @apply text-xl;
-    /* @apply underline; */
+    @apply text-lg;
+
     @apply mb-2;
     @apply font-bold;
     @apply text-white;
   }
   .description {
-    height: 300px;
+    height: 200px;
+    @apply overflow-auto;
+    @apply text-justify;
   }
 
   .button {
-    @apply bg-highlight text-white;
+    @apply bg-secondary-1 text-highlight;
     @apply rounded-md;
     @apply text-center text-sm;
     width: 100px;
     @apply mx-auto my-2 py-1;
-
+  }
+  .button:hover {
+    @apply underline;
   }
 /* 
   .card > .back {
