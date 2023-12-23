@@ -1,16 +1,24 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import SampleCard from "../card/Sample.svelte";
   import Follow from "../social/Follow.svelte";
 
   import sample from "$lib/constant/sample";
   import { dragscroll } from "$lib/action/dragscroll";
+  import { handleAnimation } from "$lib/animations/matrix";
+
+  let nameMatrix = "";
+
+  onMount(()=>{
+    handleAnimation({ text: "Salman", waitTick: 40}, txt=>nameMatrix=txt)
+  })
 
 </script>
 <div class="section-hero">
   <div class="hero-body">
     <div class="content">
       <div class="content-body">
-        <div class="heading">I'm <span class="border-b border-highlight-1">Salman</span></div>
+        <div class="heading">I'm <span class="border-b border-highlight-1 name-matrix">{nameMatrix}</span></div>
         <div class="tag"><span>Full-Stack</span> web developer</div>
       </div>
       <div class="content-bottom">
@@ -32,6 +40,11 @@
 </div>
 
 <style lang="postcss">
+  .name-matrix {
+    width: 70em!;
+    letter-spacing: 2px;
+    font-family: monospace;
+  }
   .section-hero {
     width: 100%;
     @apply bg-primary;
