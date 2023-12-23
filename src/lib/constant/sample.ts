@@ -24,7 +24,7 @@ const data: Record<string, SampleData> = {
     heading: "Code snippets template",
     tags: ["NodeJs", "Github Action", "Github pages"],
     link: "https://github.com/Salman2301/code-snippet-template",
-    description: "A simple boiler plate repo to stores all the code snippets and display it as an iframe. Take adavantage of free Github hosting and useful to Blog. Under the hood it uses highlight.js and Use github action to build and deploy the github page [gh-page]."
+    description: "A simple boiler plate repo to stores all the code snippets and host it via github pages for free. Use github action to build and deploy the Github page."
   },
   "react-native": {
     heading: "React native game",
@@ -36,7 +36,7 @@ const data: Record<string, SampleData> = {
     heading: "Wix Alert Component",
     tags: ["Svelte", "Rollup", "Custom element", "Javascript"],
     link: "https://github.com/Salman2301/wix-alert-component",
-    description: "A simple Wix Toast component made using custom element for Wix website. Under the hood using Svelte.js and Rollup to convert a SPA into a custom element. This will help to create toast message that can be displayed on corner of the screen"
+    description: "A simple Wix Toast component made using custom element for Wix website. Under the hood using Svelte.js and Rollup to convert a SPA into a custom element. Create toast message that can be displayed on corner of the screen"
   },
   "sticky-hover": {
     heading: "Sticky hover",
