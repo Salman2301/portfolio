@@ -1,11 +1,16 @@
+# https://kit.svelte.dev/docs/adapter-static
 name: Build and Deploy
+
 on: [push]
+
 permissions:
   contents: write
+
 jobs:
-  build-and-deploy:
+  build_site:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -15,12 +20,37 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install and Build 🔧 
+        env:
+          BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
           yarn install
           yarn build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v2
         with:
-          folder: build # The folder the action should deploy.
+          # this should match the `pages` option in your adapter-static options
+          path: 'build/'
+
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     folder: build
+
+  deploy:
+    needs: build_site
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v2
