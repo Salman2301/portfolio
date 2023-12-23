@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import Follow from "../social/Follow.svelte";
 </script>
 
@@ -6,7 +7,7 @@
   <div class="mb-10">
     <h1 class="heading-title">Download my<span class="text-highlight-1 pl-1">Resume</span> below</h1>
   </div>
-  <a href="/asset/pdf/Resume.pdf" download="Salman_Resume.pdf">
+  <a href="{base}/asset/pdf/Resume.pdf" download="Salman_Resume.pdf">
     <div class="btn btn-download">Download</div>
   </a>
   <div class="divider-content"></div>

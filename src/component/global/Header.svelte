@@ -1,5 +1,6 @@
 <script lang="ts">
   import menu from "$lib/constant/menu";
+  import { base } from '$app/paths';
   import DownloadIcon from "$lib/svg/Download.svelte";
   export let activeAnchor:string;
 </script>
@@ -15,7 +16,7 @@
       </div>
     </a>
   {/each}
-    <a href="/asset/pdf/Resume.pdf" download="Salman_Resume" class="icon">
+    <a href="{base}/asset/pdf/Resume.pdf" download="Salman_Resume" class="icon">
       <DownloadIcon />
     </a>
 </div>
