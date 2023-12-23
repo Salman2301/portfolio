@@ -5,6 +5,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--color-primary);
+  font-family: Roboto, cursive,
 }
 body {
   overflow-x: hidden;
@@ -24,4 +25,42 @@ div {
   --color-highlight: rgba(106, 153, 246);
   --color-highlight-1: rgba(245, 119, 70); /* #F57846 */
   --color-secondary-1: rgba(45, 45, 45);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #F57846 #CCCCCC;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: rgba(30,30,30, 0.5);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(187,187,187, 1);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(187,187,187, 1);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: rgba(187,187,187, 1);
 }

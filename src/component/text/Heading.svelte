@@ -11,5 +11,6 @@
     @apply mb-8 mt-4;
     @apply text-center;
     font-weight: 500;
+    font-family: Roboto;
   }
 </style>
