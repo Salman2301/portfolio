@@ -10,7 +10,7 @@ export interface SampleData {
 const data: Record<string, SampleData> = {
   npm: {
     heading: "Chess notation parser",
-    tags: ["Javascript", "npm", "Jest"],
+    tags: ["Javascript", "npm", "Jest", "JsDoc"],
     link: "https://github.com/Salman2301/chess-notation-parser",
     description: "Publish npm package online for chess notation parser. This package takes chess notation like bxc8 and convert it to a standardized JSON format. Full tested using Jest and deployed to npm."
   },
@@ -22,7 +22,7 @@ const data: Record<string, SampleData> = {
   },
   "code-snippets-template": {
     heading: "Code snippets template",
-    tags: ["Javascript", "Template"],
+    tags: ["NodeJs", "Github Action", "Github pages"],
     link: "https://github.com/Salman2301/code-snippet-template",
     description: "A simple boiler plate repo to stores all the code snippets and display it as an iframe. Take adavantage of free Github hosting and useful to Blog. Under the hood it uses highlight.js and Use github action to build and deploy the github page [gh-page]."
   },

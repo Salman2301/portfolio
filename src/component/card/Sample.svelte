@@ -36,11 +36,13 @@
     @apply flex flex-col;
   }
   h2 {
-    @apply text-lg;
+    @apply text-base;
 
     @apply mb-2;
     @apply font-bold;
     @apply text-white;
+
+    @apply uppercase;
   }
   .description {
     height: 200px;
@@ -54,29 +56,9 @@
     @apply text-center text-sm;
     width: 100px;
     @apply mx-auto my-2 py-1;
+    @apply border border-primary;
   }
   .button:hover {
-    @apply underline;
+    @apply border border-highlight;
   }
-/* 
-  .card > .back {
-    display: none;
-    width: 250px;
-    height: 345px;
-    overflow: scroll;
-    @apply p-2;
-    @apply pr-4;
-    @apply text-justify;
-    @apply rounded-md;
-  }
-
-  .card:hover > .front {
-    display: none;
-  }
-  .card:hover > .back {
-    display: block;
-  }
-  .card:hover > .back > .content {
-    @apply cursor-pointer;
-  } */
 </style>

@@ -26,11 +26,11 @@
 <div id="sample" use:inview={inviewOpts} on:inview_change="{setAnchor("sample")}" >
   <Hero />
 </div>
-<div id="tool" use:inview={inviewOpts} on:inview_change="{setAnchor("tool")}">
-  <Tool />
-</div>
 <div id="timeline" use:inview={inviewOpts} on:inview_change="{setAnchor("timeline")}">
   <Timeline />
+</div>
+<div id="tool" use:inview={inviewOpts} on:inview_change="{setAnchor("tool")}">
+  <Tool />
 </div>
 <div id="resume" use:inview={inviewOpts} on:inview_change="{setAnchor("resume")}">
   <Resume />

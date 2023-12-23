@@ -9,12 +9,12 @@ const menu: Menu = {
   sample: {
     label: "Sample"
   },
+  timeline: {
+    label: "Timeline"
+  },
   tool: {
     label: "Tool",
     href: "#tool"
-  },
-  timeline: {
-    label: "Timeline"
   },
   // followMe: {
   //   label:"Follow"
