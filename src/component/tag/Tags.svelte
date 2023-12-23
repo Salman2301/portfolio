@@ -4,7 +4,10 @@
   export let tags: string[] = [];
 </script>
 
-<div class="tags" use:dragscroll>
+<div
+  class="tags"
+  use:dragscroll
+>
   {#each tags as currTag}
     <div class="tag">{currTag}</div>
   {/each}
@@ -15,6 +18,7 @@
     @apply flex gap-2 items-center;
     @apply overflow-scroll;
     scrollbar-width: none;  /* Firefox */
+    @apply select-none;
     @apply my-3;
   }
   .tags::-webkit-scrollbar { 
