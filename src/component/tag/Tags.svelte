@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { dragscroll } from "$lib/action/dragscroll";
+
   export let tags: string[] = [];
 </script>
 
-<div class="tags">
+<div class="tags" use:dragscroll>
   {#each tags as currTag}
     <div class="tag">{currTag}</div>
   {/each}

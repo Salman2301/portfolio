@@ -10,15 +10,23 @@
   let nameMatrix = "";
 
   onMount(()=>{
-    handleAnimation({ text: "Salman", waitTick: 40}, txt=>nameMatrix=txt)
+    animate();
   })
+
+  function animate() {
+    handleAnimation({ text: "Salman", waitTick: 40}, txt=>nameMatrix=txt)
+  }
 
 </script>
 <div class="section-hero">
   <div class="hero-body">
     <div class="content">
       <div class="content-body">
-        <div class="heading">I'm <span class="border-b border-highlight-1 name-matrix">{nameMatrix}</span></div>
+        <div class="heading">I'm
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <span class="border-b border-highlight-1 name-matrix" on:click={animate}>{nameMatrix}</span>
+        </div>
         <div class="tag"><span>Full-Stack</span> web developer</div>
       </div>
       <div class="content-bottom">
@@ -40,21 +48,21 @@
 </div>
 
 <style lang="postcss">
-  .name-matrix {
-    width: 70em!;
-    letter-spacing: 2px;
-    font-family: monospace;
-  }
   .section-hero {
     width: 100%;
     @apply bg-primary;
     @apply text-secondary;
+    @apply mb-28;
   }
   .title {
     @apply text-3xl;
     @apply mb-8 mt-4;
     @apply text-center;
     font-weight: 500;
+  }  
+  .name-matrix {
+    letter-spacing: 2px;
+    font-family: monospace;
   }
 
   .hero-body {

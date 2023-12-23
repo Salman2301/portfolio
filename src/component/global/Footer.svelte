@@ -40,7 +40,9 @@
     @apply px-2 font-mono;
     @apply pb-1;
   }
-
+  a {
+    @apply text-center lg:text-left;
+  }
   a:hover .source {
     @apply border-b border-secondary;
   }

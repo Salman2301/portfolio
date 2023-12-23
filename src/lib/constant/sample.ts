@@ -27,10 +27,10 @@ const data: Record<string, SampleData> = {
     description: "A simple boiler plate repo to stores all the code snippets and display it as an iframe. Take adavantage of free Github hosting and useful to Blog. Under the hood it uses highlight.js and Use github action to build and deploy the github page [gh-page]."
   },
   "react-native": {
-    heading: "Tic-tac-toe on React native",
-    tags: ["React", "React Native", "Hooks"],
+    heading: "React native game",
+    tags: ["Mobile app", "React", "React Native", "Hooks"],
     link: "https://github.com/Salman2301/tic-tac-toe-app",
-    description: "A app to test out React and React native. Working tic-tag-toe game with basic animation and proper logic. Written just to for fun and showcase my work"
+    description: "A Tic-tac-toe app to test out React and React native. Working tic-tag-toe game with basic animation and proper logic. Written just to for fun and showcase my work"
   },
   "wix-alert-component": {
     heading: "Wix Alert Component",
