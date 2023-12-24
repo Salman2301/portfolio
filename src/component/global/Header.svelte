@@ -1,16 +1,18 @@
 <script lang="ts">
+  import DownloadIcon from "$lib/svg/Download.svelte";
+
   import menu from "$lib/constant/menu";
   import { base } from '$app/paths';
-  import DownloadIcon from "$lib/svg/Download.svelte";
+  
   export let activeAnchor:string;
 </script>
 
 <div class="header">
-  {#each Object.entries(menu) as [key, { label, themeName }]}
-    <a href="#{key}">
+  {#each menu as { label, themeName, href, hideMobile }}
+    <a href="#{href}" class:hidden={hideMobile} class="{hideMobile ? 'hidden md:block' : ''}" >
       <div
         class="menu-item {themeName ? `theme-${themeName}` : ''}"
-        class:highlight={activeAnchor===key}
+        class:highlight={activeAnchor===href}
       >
         {label}
       </div>

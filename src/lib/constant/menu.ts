@@ -1,27 +1,28 @@
-interface Menu {
-  [label: string]: {
-    label: string;
-    href?: string;
-    themeName?: "download";
-  }
+interface MenuItem {
+  label: string;
+  href?: string;
+  themeName?: "download";
+  hideMobile?: boolean;
 }
-const menu: Menu = {
-  sample: {
+
+const menu: MenuItem[] = [
+  {
+    href: "sample",
     label: "Sample"
   },
-  timeline: {
+  {
+    href:"timeline",
     label: "Timeline"
   },
-  tool: {
+  {
+    href:"tool",
     label: "Tool",
-    href: "#tool"
   },
-  // followMe: {
-  //   label:"Follow"
-  // },
-  resume: {
+  {
+    href:"resume",
     label: "Resume",
     themeName: "download"
   }
-}
+]
+
 export default menu;

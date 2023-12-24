@@ -6,9 +6,11 @@ html {
   scroll-behavior: smooth;
   background: var(--color-primary);
 }
+
 body {
   overflow-x: hidden;
 }
+
 div {
   box-sizing: border-box;
 }

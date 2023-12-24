@@ -22,20 +22,21 @@
      A simple Wix Toast component made using custom element for Wix website. Under the hood using svelte.js to Create toast message that can be displayed on corner of the screen
   ✔ Tic-tac-toe (https://github.com/Salman2301/tic-tac-toe-app) @done(23-12-23 13:03)
     This is a simple Tic Tac Toe game built with React. It allows two players to take turns marking spaces on a 3x3 grid. The first player to get three in a row (horizontally, vertically, or diagonally) wins the game.
-  ☐ SVG chart using svelte
-  ☐ Terminal like apps
+  ✘ SVG chart using svelte @cancelled(23-12-24 07:44)
+  ✘ Terminal like apps @cancelled(23-12-24 07:44)
 
 
-☐ Publish and Connect with a domain ( dev.salman2301.com )
-☐ Drag Scroll of samples cards should be smooth on mobile
-☐ Add Online Portfolio
+✔ Publish and Connect with a domain ( dev.salman2301.com ) Fiv@done(23-12-24 07:44)
+✔ Add Online Portfolio @done(23-12-24 09:47)
  A place to showcasee my online portfolio
-  ☐ Chess
-  ☐ Fiverr
-  ☐ Codingame
-    ☐ Add certificate to the website
-  ☐ Codewars
-  ☐ Github
---
+  ✔ Chess @done(23-12-24 09:47)
+  ✔ Fiverr @done(23-12-24 09:47)
+  ✔ Codingame @done(23-12-24 09:47)
+  ✔ Codewars @done(23-12-24 09:47)
+  ✔ Github @done(23-12-24 09:47)
+
+☐ Drag Scroll of samples cards should be smooth on mobile
+☐ Add certificate to the website
+  --
 ☐ Update Resume based on Website
  

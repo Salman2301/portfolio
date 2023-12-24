@@ -21,7 +21,7 @@
     /* height: 400px; */
     @apply bg-primary;
     @apply flex flex-col items-center justify-center;
-    @apply py-40;
+    @apply pb-40 pt-20;
   }
   .heading-title {
     @apply text-3xl;

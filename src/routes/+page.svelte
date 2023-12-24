@@ -5,6 +5,8 @@
   import Resume from "../component/section/Resume.svelte";
   import Footer from "../component/global/Footer.svelte";
   import Header from "../component/global/Header.svelte";
+  import Portfolio from "../component/card/Portfolio.svelte";
+  
   import { inview } from 'svelte-inview';
 
   type Anchor = "sample" | "tool" | "timeline" | "resume";
@@ -13,6 +15,7 @@
   const inviewOpts = {
     threshold: 0.4
   }
+
   function setAnchor(anchorName: Anchor) {
     return function (event:any) {
       if(event.detail.inView) {
@@ -26,6 +29,7 @@
 <div id="sample" use:inview={inviewOpts} on:inview_change="{setAnchor("sample")}" >
   <Hero />
 </div>
+  <Portfolio />
 <div id="timeline" use:inview={inviewOpts} on:inview_change="{setAnchor("timeline")}">
   <Timeline />
 </div>
