@@ -5,7 +5,6 @@
 html {
   scroll-behavior: smooth;
   background: var(--color-primary);
-  font-family: Roboto, cursive,
 }
 body {
   overflow-x: hidden;
@@ -14,8 +13,8 @@ div {
   box-sizing: border-box;
 }
 
-h1 {
-  font-family: cursive, Roboto !important;
+h1, h2, h3, p, div {
+  font-family: Roboto, cursive;
 }
 
 div {
