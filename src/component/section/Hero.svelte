@@ -26,6 +26,7 @@
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
           <span class="border-b border-highlight-1 name-matrix" on:click={animate}>{nameMatrix}</span>
+          <!-- <input value={nameMatrix} class="leading-5 h-24"/> -->
         </div>
         <div class="tag"><span>Full-Stack</span> web developer</div>
       </div>
