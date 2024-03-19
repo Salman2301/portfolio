@@ -6,8 +6,13 @@ export interface SampleData {
 } 
 
 // Sample of my previous works
-// asset location -> ./assets/gif/sample/
 const data: Record<string, SampleData> = {
+  infisical: {
+    heading: "Infisical - Contributor",
+    tags: ["react", "radix", "react-query", "knex"],
+    link: "https://github.com/Infisical/infisical/pulls/Salman2301",
+    description: "Implementing GitHub Integration to support multiple different secrets sync to GitHub environment, Org and Repo. Implemented Integration filter and sort mechanisim using Knex, FastAPI, React hook form, React hook query. etc for more pull request check the link"
+  },
   npm: {
     heading: "Chess notation parser",
     tags: ["Javascript", "npm", "Jest", "JsDoc"],
