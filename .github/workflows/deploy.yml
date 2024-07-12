@@ -19,8 +19,6 @@ jobs:
         run: yarn install
 
       - name: build
-        env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
         run: |
           yarn build
 
@@ -40,7 +38,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://salman2301.com
 
     steps:
       - name: Deploy
