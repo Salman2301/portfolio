@@ -7,10 +7,16 @@ export interface SampleData {
 
 // Sample of my previous works
 const data: Record<string, SampleData> = {
+  montotech: {
+    heading: "Montotech - Working",
+    tags: ["React", "NextJs", "Tailwind", "Typescript"],
+    link: "https://montotech.com",
+    description: "Montotech is a startup company that provides software solutions for businesses. I was working as a software engineer for Montotech. I was responsible for developing a leading AI startup and also maintaining the existing codebase, migrating to trpc stack while adding new features."
+  },
   infisical: {
     heading: "Infisical - Contributor",
     tags: ["react", "radix", "react-query", "knex"],
-    link: "https://github.com/Infisical/infisical/pulls/Salman2301",
+    link: "https://github.com/Infisical/infisical/pulls?q=is%3Apr+author%3ASalman2301+",
     description: "Implementing GitHub Integration to support multiple different secrets sync to GitHub environment, Org and Repo. Implemented Integration filter and sort mechanisim using Knex, FastAPI, React hook form, React hook query. etc for more pull request check the link"
   },
   npm: {

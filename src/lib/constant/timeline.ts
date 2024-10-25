@@ -1,5 +1,13 @@
 const data = [
   {
+    timeline: "2024-now",
+    title: "Software Engineer",
+    company: "Monto",
+    companyLink: "https://montotech.com",
+    exp: `${new Date().getMonth() - 6} months`,
+    tags: ["NextJS", "Prisma", "Trpc", "Docker", "React-Native"]
+  },
+  {
     timeline: "2020-2023",
     title: "Senior Full-Stack Developer",
     company: "Oktria",

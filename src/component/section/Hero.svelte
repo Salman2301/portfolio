@@ -28,7 +28,7 @@
           <span class="border-b border-highlight-1 name-matrix" on:click={animate}>{nameMatrix}</span>
           <!-- <input value={nameMatrix} class="leading-5 h-24"/> -->
         </div>
-        <div class="tag"><span>Full-Stack</span> web developer</div>
+        <div class="tag">Software Engineer working at <span>Monto</span></div>
       </div>
       <div class="content-bottom">
         <Follow />
@@ -53,7 +53,7 @@
     width: 100%;
     @apply bg-primary;
     @apply text-secondary;
-    @apply mb-28;
+    margin-top: 60px;
   }
   .title {
     @apply text-3xl;
@@ -74,7 +74,7 @@
     height: 400px;
     @apply w-full;
     min-width: 360px;
-    @apply ml-0 lg:ml-10;
+    @apply ml-0 lg:ml-10 mt-10;
     @apply flex flex-col justify-center items-center;
   }
   .content-bottom {
@@ -85,7 +85,7 @@
   }
   .content-body > .heading {
     @apply text-5xl md:text-5xl;
-    @apply mb-4;
+    @apply mb-8;
     @apply w-full;
     @apply text-center;
     @apply w-full;
@@ -106,7 +106,7 @@
   .divider {
     width: 2px;
     height: 550px;
-    @apply mx-4;
+    @apply mx-4 mt-10;
     background-color: rgba(55,55,55);
     @apply hidden lg:block;
   }

@@ -18,11 +18,6 @@ const menu: MenuItem[] = [
     href:"tool",
     label: "Tool",
   },
-  {
-    href:"resume",
-    label: "Resume",
-    themeName: "download"
-  }
 ]
 
 export default menu;
