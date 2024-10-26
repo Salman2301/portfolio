@@ -3,8 +3,8 @@
 </script>
 
 <div class="social">
-  {#each Object.entries(social) as [key, { icon, name, link }]}
-    <div class="icon">
+  {#each Object.entries(social) as [key, { icon, name, link, color }]}
+    <div class="icon" style="--bard-color: {color}">
       <a href="{link}" title="{name}" aria-label="share {name}">
         <svelte:component this={icon} />
       </a>
@@ -27,9 +27,6 @@
     @apply cursor-pointer;
   }
   .icon:hover :global(svg) {
-    /* color: red; */
-    /* @apply text-primary; */
-    color: var(--color-highlight-1);
-
+    color: var(--bard-color);
   }
 </style>
