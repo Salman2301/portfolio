@@ -92,15 +92,16 @@
     position: relative;
     z-index: 2;
     transition: transform 0.3s ease;
-    /* @apply bg-primary; */
     @apply border;
     @apply px-4 pt-1 pb-2;
     @apply rounded-md;
-    /* @apply border-y; */
     @apply flex flex-col items-center;
     @apply shadow-sm;
     width: 180px;
     border-color: rgba(var(--brand-color-raw), 0.9);
+  }
+  .card:hover {
+    background: rgba(var(--brand-color-raw), 0.1);
   }
   .logo {
     @apply w-10;
@@ -109,6 +110,7 @@
   }
   .title {
     @apply text-lg;
+    @apply bg-transparent;
   }
   .suffix {
     @apply text-sm;
@@ -117,5 +119,6 @@
   .description {
     @apply text-xs;
     @apply font-bold;
+    @apply bg-transparent;
   }
 </style>

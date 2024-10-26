@@ -155,9 +155,6 @@
     @apply transition-all duration-200;
     @apply bg-transparent;
   }
-  .tag:hover > .label{
-    @apply text-white;
-  }
   .tag:hover > .icon-tag-tool:not(.highlight) {
     @apply bg-white;
   }

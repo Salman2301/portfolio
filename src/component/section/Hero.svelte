@@ -5,19 +5,37 @@
 
   import sample from "$lib/constant/sample";
   import { dragscroll } from "$lib/action/dragscroll";
-  import { handleAnimation } from "$lib/animations/matrix";
 
   let nameMatrix = "";
+  let animationInterval: number;
 
-  onMount(()=>{
+  onMount(() => {
     animate();
-  })
+  });
 
   function animate() {
-    handleAnimation({ text: "Salman", waitTick: 40}, txt=>nameMatrix=txt)
-  }
+    const targetName = "Salman";
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+    let currentIndex = 0;
 
+    clearInterval(animationInterval);
+
+    animationInterval = setInterval(() => {
+      if (currentIndex < targetName.length) {
+        let randomChars = "";
+        for (let i = currentIndex; i < targetName.length; i++) {
+          randomChars += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        nameMatrix = targetName.slice(0, currentIndex) + randomChars;
+        currentIndex++;
+      } else {
+        nameMatrix = targetName;
+        clearInterval(animationInterval);
+      }
+    }, 50);
+  }
 </script>
+
 <div class="section-hero">
   <div class="hero-body">
     <div class="content">
@@ -26,7 +44,6 @@
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
           <span class="border-b border-highlight-1 name-matrix" on:click={animate}>{nameMatrix}</span>
-          <!-- <input value={nameMatrix} class="leading-5 h-24"/> -->
         </div>
         <div class="tag">Software Engineer working at <span>Monto Tech</span></div>
       </div>
@@ -64,6 +81,8 @@
   .name-matrix {
     letter-spacing: 2px;
     font-family: monospace;
+    transition: all 0.1s ease-in-out;
+    min-width: 400px;
   }
 
   .hero-body {
@@ -79,8 +98,6 @@
   }
   .content-bottom {
     @apply flex flex-col items-center justify-center;
-    /* @apply mt-20; */
-    /* @apply -mb-20; */
     @apply md:w-[40vw] w-full;
   }
   .content-body > .heading {
@@ -91,7 +108,6 @@
     @apply w-full;
   }
   
-
   .content-body > .tag {
     @apply text-center;
     @apply w-full;
@@ -128,7 +144,6 @@
   .cards {
     @apply flex gap-4;
     @apply w-full;
-    /* @apply mt-40; */
     @apply pb-4 px-4;
     @apply overflow-x-scroll;
   }
@@ -137,5 +152,4 @@
     color: white;
     fill: white;
   }
-
 </style>
