@@ -28,16 +28,16 @@
           <span class="border-b border-highlight-1 name-matrix" on:click={animate}>{nameMatrix}</span>
           <!-- <input value={nameMatrix} class="leading-5 h-24"/> -->
         </div>
-        <div class="tag">Software Engineer working at <span>Monto</span></div>
+        <div class="tag">Software Engineer working at <span>Monto Tech</span></div>
       </div>
       <div class="content-bottom">
         <Follow />
       </div>
     </div>
-    <div class="divider"></div>
+    <div class="shadow-right"></div>
     <div class="sample">
       <div class="mt-20">
-        <h1 class="title"><span class="text-highlight-1 pr-1">Sample</span> Work</h1>
+        <h1 class="title">My<span class="text-highlight-1 pl-1">Work</span> </h1>
       </div>
       <div class="cards" use:dragscroll >
         {#each Object.entries(sample) as [key, card]}
@@ -71,16 +71,16 @@
   }
 
   .hero-body > .content {
-    height: 400px;
+    height: 300px;
     @apply w-full;
     min-width: 360px;
-    @apply ml-0 lg:ml-10 mt-10;
-    @apply flex flex-col justify-center items-center;
+    @apply ml-0 lg:ml-10 mt-44;
+    @apply flex flex-col justify-between items-center;
   }
   .content-bottom {
     @apply flex flex-col items-center justify-center;
-    @apply mt-20;
-    @apply -mb-20;
+    /* @apply mt-20; */
+    /* @apply -mb-20; */
     @apply md:w-[40vw] w-full;
   }
   .content-body > .heading {
@@ -101,6 +101,15 @@
 
   .content-body > .tag > span {
     @apply text-highlight;
+  }
+
+  .shadow-right {
+    width: 2px;
+    height: 550px;
+    @apply mx-4 mt-10;
+    background: linear-gradient(to bottom, rgba(55,55,55,0), rgba(55,55,55,0.5), rgba(55,55,55,0));
+    @apply hidden lg:block;
+    box-shadow: 0 0 10px rgba(55,55,55,0.3);
   }
 
   .divider {

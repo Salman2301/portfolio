@@ -2,9 +2,9 @@ const data = [
   {
     timeline: "2024-now",
     title: "Software Engineer",
-    company: "Monto",
+    company: "Monto Tech",
     companyLink: "https://montotech.com",
-    exp: `${new Date().getMonth() - 6} months`,
+    exp: `${new Date().getMonth() - 5} months`,
     tags: ["NextJS", "Prisma", "Trpc", "Docker", "React-Native"]
   },
   {

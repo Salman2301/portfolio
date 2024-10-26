@@ -8,8 +8,8 @@ export interface SampleData {
 // Sample of my previous works
 const data: Record<string, SampleData> = {
   montotech: {
-    heading: "Montotech - Working",
-    tags: ["React", "NextJs", "Tailwind", "Typescript"],
+    heading: "Montotech - SWE",
+    tags: ["NextJs", "Trpc", "Tailwind", "Typescript"],
     link: "https://montotech.com",
     description: "Montotech is a startup company that provides software solutions for businesses. I was working as a software engineer for Montotech. I was responsible for developing a leading AI startup and also maintaining the existing codebase, migrating to trpc stack while adding new features."
   },

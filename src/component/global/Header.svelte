@@ -8,7 +8,7 @@
 </script>
 
 <div class="flex items-center justify-center">
-  <div class="header shadow-lg">
+  <div class="header shadow-sm">
     {#each menu as { label, themeName, href, hideMobile }}
       <a href="#{href}" class:hidden={hideMobile} class="{hideMobile ? 'hidden md:block' : ''}" >
         <div

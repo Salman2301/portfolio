@@ -6,6 +6,7 @@
 <div class="section-resume">
   <div class="mb-10">
     <h1 class="heading-title">Download my<span class="text-highlight-1 pl-1">Resume</span> below</h1>
+    <p class="text-sm text-center w-full mb-8 mt-4">Last updated on 26th October 2024</p>
   </div>
   <a href="{base}/asset/pdf/Resume.pdf" download="Salman_Resume.pdf">
     <div class="btn btn-download">Download</div>
@@ -25,7 +26,7 @@
   }
   .heading-title {
     @apply text-3xl;
-    @apply mb-8 mt-4;
+    @apply mt-4;
     @apply text-center;
     font-weight: 500;
   }
