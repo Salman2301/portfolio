@@ -50,29 +50,29 @@ const data: Record<ToolType, ToolData[]> = {
   ],
   backend: [
     {
-      name: "Nodejs",
+      name: "Trpc",
       rank: 6,
+      icon: "trpc",
+      type: "backend",
+      highlight: true,
+    },
+    {
+      name: "NextJS",
+      rank: 6,
+      icon: "nextjs",
+      type: "backend",
+      highlight: true,
+    },
+    {
+      name: "Nodejs",
+      rank: 3,
       icon: "nodejs",
       type: "backend",
-      highlight: true,
     },
     {
-      name: "PostgreSQL",
-      rank: 6,
-      icon: "psql",
-      type: "backend",
-      highlight: true,
-    },
-    {
-      name: "Mongo",
+      name: "Prisma",
       rank: 3,
-      icon: "mongo",
-      type: "backend",
-    },
-    {
-      name: "Go",
-      rank: 3,
-      icon: "go",
+      icon: "prisma",
       type: "backend",
     },
     {
@@ -82,9 +82,9 @@ const data: Record<ToolType, ToolData[]> = {
       type: "backend",
     },
     {
-      name: "Kubernetes",
+      name: "Docker",
       rank: 4,
-      icon: "kube",
+      icon: "docker",
       type: "backend",
     },
   ],
