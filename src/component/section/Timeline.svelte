@@ -1,36 +1,49 @@
 <script lang="ts">
   import data from "$lib/constant/timeline";
   import Tags from "../tag/Tags.svelte";
+  import { fade, fly } from 'svelte/transition';
+  import { onMount } from 'svelte';
+
+  let mounted = false;
+
+  onMount(() => {
+    mounted = true;
+  });
 </script>
 
 <div class="section-timeline">
-  <h1 class="heading">My <span class="text-highlight-1 pr-1">Timeline</span> till now</h1>
+  <h1 class="heading" in:fade={{ delay: 200, duration: 800 }}>
+    My <span class="text-highlight-1 pr-1">Timeline</span> till now
+  </h1>
   <div class="timeline-container">
-    <div class="line">
-    </div>
-    {#each data as { timeline, exp, title, company, companyLink, tags }}
-      <div class="timeline-card">
-        <div class="item">
-          <div class="item-line left"></div>
-          <div class="item-content">  
-            <div class="title-exp">
-              <span class="title">{title}</span>
-              <span class="exp">{exp}</span>
-            </div>
-            <div class="timeline-company">
-              <span class="timeline">{timeline}</span>
-              {#if companyLink}
-                <a href="{companyLink}" target="_blank" ><span class="company underline">{company}</span></a>
-              {:else}
-                <span class="company">{company}</span>
-              {/if}
-            </div>
+    <div class="line" in:fly={{ y: 200, duration: 1000 }}></div>
+    {#each data as { timeline, exp, title, company, companyLink, tags }, index}
+      {#if mounted}
+        <div class="timeline-card" in:fly={{ y: 50, duration: 500, delay: index * 150 }}>
+          <div class="item">
+            <div class="item-line left"></div>
+            <div class="item-content" in:fade={{ duration: 300, delay: index * 150 + 300 }}>  
+              <div class="title-exp">
+                <span class="title">{title}</span>
+                <span class="exp">{exp}</span>
+              </div>
+              <div class="timeline-company">
+                <span class="timeline">{timeline}</span>
+                {#if companyLink}
+                  <a href="{companyLink}" target="_blank" class="company-link">
+                    <span class="company underline">{company}</span>
+                  </a>
+                {:else}
+                  <span class="company">{company}</span>
+                {/if}
+              </div>
               <Tags {tags} />
+            </div>
+            <div class="item-line right"></div>
           </div>
-          <div class="item-line right"></div>
+          <div class="item-connect-mobile"></div>
         </div>
-        <div class="item-connect-mobile"></div>
-      </div>
+      {/if}
     {/each}
   </div>
 </div>
@@ -46,6 +59,7 @@
     @apply bg-primary;
     @apply px-10 py-10;
     @apply gap-4;
+    min-height: 700px;
   }
   .timeline-container {
     @apply flex flex-col items-center;
@@ -59,16 +73,19 @@
     @apply absolute;
     @apply bg-transparent;
     @apply invisible;
+    z-index: 100;
   }
   .item {
     @apply w-full;
     @apply flex items-center justify-center;
     padding-left: 330px;
+    @apply bg-transparent;
   }
   .item-line {
     @apply w-10;
     height: 2px;
     @apply bg-secondary;
+    transition: width 0.3s ease-in-out;
   }
   .item-connect-mobile {
     width: 1px;
@@ -90,10 +107,14 @@
   }
   .item-content {
     width: 320px;
-    /* height: 100px; */
     border-radius: 10px;
     @apply border rounded-md;
     @apply px-2 pt-4;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .item-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   }
   
   .item:nth-child(n) {
@@ -102,7 +123,6 @@
   }
   
   @media screen(lg) {
-    
     .item-connect-mobile {
       @apply invisible;
     }
@@ -157,6 +177,13 @@
   .company {
     @apply text-xs;
     @apply text-highlight;
+  }
+  .company-link {
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+  }
+  .company-link:hover {
+    transform: translateY(-2px);
   }
   a .company {
     @apply hover:text-highlight-1;

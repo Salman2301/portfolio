@@ -3,6 +3,7 @@
   import { onMount } from 'svelte';
 
   let cardsElement: HTMLElement;
+  let spotsColor: string = "128, 128, 128";
   let spots: { x: number; y: number; size: number; opacity: number; speed: number; angle: number }[] = [];
 
   onMount(() => {
@@ -29,29 +30,35 @@
     setInterval(() => {
       spots = spots.map(spot => {
         const radians = spot.angle * (Math.PI / 180);
-        const dx = Math.cos(radians) * spot.speed;
-        const dy = Math.sin(radians) * spot.speed;
+        const increaseSpeed = spotsColor !== "128, 128, 128" ? 1.5 : 1;
+        const dx = Math.cos(radians) * spot.speed * increaseSpeed;
+        const dy = Math.sin(radians) * spot.speed * increaseSpeed;
         
         return {
           ...spot,
           x: (spot.x + dx + 100) % 100,
           y: (spot.y + dy + 100) % 100,
-          opacity: Math.max(0.1, spot.opacity - 0.01)
         };
       });
     }, 50);
   }
 </script>
 
-<div class="cards" bind:this={cardsElement}>
+<div class="cards" bind:this={cardsElement} on:mouseleave={()=>{
+  spotsColor = "128, 128, 128";
+}}>
   {#each spots as spot}
     <div
       class="spot"
-      style="left: {spot.x}%; top: {spot.y}%; width: {spot.size}px; height: {spot.size}px; opacity: {spot.opacity};"
+      style="left: {spot.x}%; top: {spot.y}%; width: {spot.size}px; height: {spot.size}px; opacity: {spot.opacity};--brand-color: {spotsColor};"
     ></div>
   {/each}
   {#each data as item}
-    <div class="card" style="--brand-color-raw: {item.color}">
+    <div class="card" style="--brand-color-raw: {item.color}" on:mouseenter={()=>{
+      spotsColor = item.color;
+    }} on:mouseleave={()=>{
+      spotsColor = "128, 128, 128";
+    }}>
       <img src={`/asset/portfolio/${item.logo}`} alt={item.title} class="logo" />
       <a href="{item.link}" target="_blank" class="hover:underline">
         <div class="title">{item.title}<span class="suffix">.com</span></div>
@@ -78,10 +85,10 @@
   .spot {
     position: absolute;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(var(--brand-color), 0.8);
     pointer-events: none;
     transition: opacity 0.5s ease;
-    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 4px 1px rgba(var(--brand-color), 0.5);
   }
 
   .card:hover {
@@ -99,6 +106,7 @@
     @apply shadow-sm;
     width: 180px;
     border-color: rgba(var(--brand-color-raw), 0.9);
+    background-color: rgba(0,0,0, 0);
   }
   .card:hover {
     background: rgba(var(--brand-color-raw), 0.1);
