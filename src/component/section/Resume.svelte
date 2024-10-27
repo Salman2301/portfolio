@@ -34,7 +34,8 @@
     width: 180px;
     height: 1px;
     @apply my-10;
-    @apply bg-secondary;
+    @apply bg-gradient-to-r from-transparent via-secondary to-transparent;
+    opacity: 0.4;
   }
   .heading {
     @apply text-5xl;

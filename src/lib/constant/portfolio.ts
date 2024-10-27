@@ -7,9 +7,16 @@ const data = [
     link: "https://www.codewars.com/users/salman2301"
   },
   {
+    logo: "fiverr.svg",
+    title: "Fiverr",
+    description: "Level 1 seller",
+    color: "29, 191, 115",
+    link: "https://www.fiverr.com/salman2301"
+  },
+  {
     logo: "github.svg",
     title: "Github",
-    description: "+5500 Contributions",
+    description: "+6600 Contributions",
     color: "255, 255, 255",
     link: "https://github.com/salman2301"
   },
@@ -26,13 +33,6 @@ const data = [
     description: "Level 11",
     color: "242, 187, 19",
     link: "https://www.codingame.com/profile/54e05ce96ccf32303fa020721b20f2419899473"
-  },
-  {
-    logo: "fiverr.svg",
-    title: "Fiverr",
-    description: "Level 1 seller",
-    color: "29, 191, 115",
-    link: "https://www.fiverr.com/salman2301"
   }
 ]
 

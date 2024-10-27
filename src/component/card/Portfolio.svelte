@@ -30,7 +30,7 @@
     setInterval(() => {
       spots = spots.map(spot => {
         const radians = spot.angle * (Math.PI / 180);
-        const increaseSpeed = spotsColor !== "128, 128, 128" ? 1.5 : 1;
+        const increaseSpeed = spotsColor !== "128, 128, 128" ? 3 : 1;
         const dx = Math.cos(radians) * spot.speed * increaseSpeed;
         const dy = Math.sin(radians) * spot.speed * increaseSpeed;
         
@@ -61,7 +61,7 @@
     }}>
       <img src={`/asset/portfolio/${item.logo}`} alt={item.title} class="logo" />
       <a href="{item.link}" target="_blank" class="hover:underline">
-        <div class="title">{item.title}<span class="suffix">.com</span></div>
+        <div class="title">{item.title}</div>
       </a>
       <div class="description">{item.description}</div>
     </div>
@@ -89,10 +89,6 @@
     pointer-events: none;
     transition: opacity 0.5s ease;
     box-shadow: 0 0 4px 1px rgba(var(--brand-color), 0.5);
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
   }
 
   .card {

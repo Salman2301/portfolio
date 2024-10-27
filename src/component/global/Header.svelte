@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { DownloadIcon } from 'lucide-svelte';
+  import { DownloadIcon, HomeIcon } from 'lucide-svelte';
 
   import menu from "$lib/constant/menu";
   import { base } from '$app/paths';
@@ -7,21 +7,26 @@
   export let activeAnchor:string;
 </script>
 
-<div class="flex items-center justify-center">
+<div class="flex items-center justify-center md:max-w-none max-w-screen-sm">
   <div class="header shadow-sm">
-    {#each menu as { label, themeName, href, hideMobile }}
+    {#each menu as { label, themeName, href, hideMobile, Icon }}
       <a href="#{href}" class:hidden={hideMobile} class="{hideMobile ? 'hidden md:block' : ''}" >
         <div
           class="menu-item {themeName ? `theme-${themeName}` : ''}"
           class:highlight={activeAnchor===href}
         >
+          {#if Icon}
+            <div class="md:block hidden bg-transparent text-inherit">
+              <Icon size={20} />
+            </div>
+          {/if}
           {label}
         </div>
       </a>
     {/each}
-    <div class="flex items-center justify-center gap-4 bg-highlight-1 rounded-md text-white px-4">
-      <a href="#resume" class="bg-transparent text-md py-1 hover:underline border-r border-r-white pr-1">Resume</a>
-      <a href="{base}/asset/pdf/Resume.pdf" download="Salman_Resume" class="icon">
+    <div class="flex items-center justify-center text-white">
+      <a href="#resume" class="btn-resume" class:active={activeAnchor==="resume"}>Resume</a>
+      <a href="{base}/asset/pdf/Resume.pdf" download="Salman_Resume" class="bg-highlight-1 rounded-r-md pr-4 pl-2 w-full h-8 flex items-center hover:bg-highlight-1-dark">
         <DownloadIcon size=20 />
       </a>
     </div>
@@ -54,6 +59,7 @@
     @apply hover:text-highlight;
     @apply cursor-pointer;
     @apply bg-black;
+    @apply flex items-center gap-2;
   }
   .highlight {
     @apply text-highlight;
@@ -69,18 +75,28 @@
     @apply bg-highlight;
   }
   
-  .theme-download.highlight {
-    @apply underline
-  }
-  .icon {
-    margin-left: -10px;
-    @apply bg-transparent; 
-  }
-  .icon:hover {
-    opacity: 0.8;
-  }
   .top-blank-space {
     height: 40px;
     @apply h-10 lg:h-0;
+  }
+
+  .btn-resume {
+    @apply bg-highlight-1;
+    @apply h-8;
+    @apply border-r border-r-black;
+    @apply pr-1;
+    @apply w-full;
+    @apply pl-4 pr-2;
+    @apply rounded-l-md;
+    @apply flex;
+    @apply items-center;
+  }
+
+  .btn-resume:hover {
+    @apply hover:bg-highlight-1-dark;
+  }
+
+  .btn-resume.active {
+    @apply bg-highlight-1-dark;
   }
 </style>
