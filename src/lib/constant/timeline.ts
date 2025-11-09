@@ -4,7 +4,7 @@ const data = [
     title: "Software Engineer",
     company: "Monto Tech",
     companyLink: "https://montotech.com",
-    exp: `${new Date().getMonth() - 5} months`,
+    exp: `>1 year`,
     tags: ["NextJS", "Prisma", "Trpc", "Docker", "React-Native"]
   },
   {
